@@ -1,4 +1,4 @@
-package com.example.backend;
+package org.shooong.push;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

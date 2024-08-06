@@ -1,4 +1,4 @@
-package com.example.backend.cache;
+package org.shooong.push.cache;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
