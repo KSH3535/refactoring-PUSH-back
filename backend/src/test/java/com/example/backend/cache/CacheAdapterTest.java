@@ -3,6 +3,9 @@ package com.example.backend.cache;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.shooong.push.global.cache.CacheAdapter;
+import org.shooong.push.global.cache.UserCacheKey;
+import org.shooong.push.global.cache.UserCacheValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
