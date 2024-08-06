@@ -14,7 +14,7 @@ import com.example.backend.exception.CouponNotInPeriodException;
 import com.example.backend.exception.DuplicateCouponException;
 import com.example.backend.exception.ErrorCode;
 import com.example.backend.exception.UserNotFoundException;
-import com.example.backend.producer.CouponCreateProducer;
+//import com.example.backend.producer.CouponCreateProducer;
 import com.example.backend.repository.CouponIssue.CouponIssueRepository;
 import com.example.backend.repository.CouponIssue.RedisRepository;
 import com.example.backend.repository.User.UserRepository;
@@ -37,7 +37,7 @@ public class CouponIssueService {
     private final CouponIssueRepository couponIssueRepository;
     private final UserRepository userRepository;
     private final CouponRepository couponRepository;
-    private final CouponCreateProducer couponCreateProducer;
+//    private final CouponCreateProducer couponCreateProducer;
     private final RedisRepository redisRepository;
 
 
@@ -89,7 +89,7 @@ public class CouponIssueService {
                     throw new DuplicateCouponException(ErrorCode.ISSUANCE_DUPLICATE_COUPON);
                 });
 
-            couponCreateProducer.create(couponId, userId);
+//            couponCreateProducer.create(couponId, userId);
         } catch (CouponConditionNotFoundException e) {
             throw new RuntimeException("Failed to issue coupon: " + e.getMessage(), e);
         }

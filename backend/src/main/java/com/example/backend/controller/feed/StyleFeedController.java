@@ -25,10 +25,10 @@ public class StyleFeedController {
     @Autowired
     private StyleFeedService styleFeedService;
 
-    @Autowired
-    private ObjectStorageService objectStorageService;
+//    @Autowired
+//    private ObjectStorageService objectStorageService;
 
-    private String bucketName = "push";
+//    private String bucketName = "push";
 
     // 피드 등록
     @PostMapping("/api/user/feedRegistration")
@@ -41,14 +41,14 @@ public class StyleFeedController {
         log.info("새로운 피드 생성: {}", styleFeedDto);
 
         List<StyleFeedDto> styleFeedDtos = new ArrayList<>();
-        for (MultipartFile file : files) {
-            String fileName = objectStorageService.uploadFile(bucketName, "shooong/", file);
-            if (fileName != null) {
-                StyleFeedDto styleFeedDto1 = new StyleFeedDto();
-                styleFeedDto1.setFeedImage(fileName);
-                styleFeedDtos.add(styleFeedDto1);
-            }
-        }
+//        for (MultipartFile file : files) {
+//            String fileName = objectStorageService.uploadFile(bucketName, "shooong/", file);
+//            if (fileName != null) {
+//                StyleFeedDto styleFeedDto1 = new StyleFeedDto();
+//                styleFeedDto1.setFeedImage(fileName);
+//                styleFeedDtos.add(styleFeedDto1);
+//            }
+//        }
         if (!styleFeedDtos.isEmpty()) {
             styleFeedDto.setFeedImage(styleFeedDtos.get(0).getFeedImage());
         }

@@ -45,7 +45,7 @@ public class MypageController {
     private final BuyingBiddingService buyingBiddingService;
     private final DrawService drawService;
     private final BookmarkProductService bookmarkProductService;
-    private final AdminService adminService;
+//    private final AdminService adminService;
 
     /**
      * 마이페이지 메인
@@ -151,16 +151,16 @@ public class MypageController {
     }
 
     // 판매 정산 내역
-    @GetMapping("/account/sales/user")
-    public ResponseEntity<SalesSummaryRespDto> getSalesSummary(@AuthenticationPrincipal UserDTO user, Pageable pagable){
-
-        Long userId = user.getUserId();
-        log.info("userId: {}",userId);
-
-        SalesSummaryRespDto result =adminService.getSalesSummary(userId,pagable);
-
-        return new ResponseEntity<>(result, HttpStatus.OK);
-    }
+//    @GetMapping("/account/sales/user")
+//    public ResponseEntity<SalesSummaryRespDto> getSalesSummary(@AuthenticationPrincipal UserDTO user, Pageable pagable){
+//
+//        Long userId = user.getUserId();
+//        log.info("userId: {}",userId);
+//
+//        SalesSummaryRespDto result =adminService.getSalesSummary(userId,pagable);
+//
+//        return new ResponseEntity<>(result, HttpStatus.OK);
+//    }
 
 
     /**

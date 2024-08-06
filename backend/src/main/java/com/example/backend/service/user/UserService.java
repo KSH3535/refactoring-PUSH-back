@@ -44,7 +44,7 @@ public class UserService {
    private final BuyingBiddingService buyingBiddingService;
    private final UserCouponService userCouponService;
    private final BookmarkProductService bookmarkProductService;
-   private final ObjectStorageService objectStorageService;
+//   private final ObjectStorageService objectStorageService;
 
    public UserDTO entityToDTO(Users user) {
        return new UserDTO(
@@ -82,12 +82,12 @@ public class UserService {
 
       String imageUrl = "";
 
-      if (file != null && !file.isEmpty()) {
-         String bucketName = "push";
-         String directoryPath = "shooong/mypage/";
-
-         imageUrl = objectStorageService.uploadFile(bucketName, directoryPath, file);
-      }
+//      if (file != null && !file.isEmpty()) {
+//         String bucketName = "push";
+//         String directoryPath = "shooong/mypage/";
+//
+//         imageUrl = objectStorageService.uploadFile(bucketName, directoryPath, file);
+//      }
 
       Users user = Users.builder()
               .email(userRegisterDTO.getEmail())
@@ -236,12 +236,12 @@ public class UserService {
 
       String imageUrl = userModifyReqDto.getProfileImg();
 
-      if (file != null && !file.isEmpty()) {
-         String bucketName = "push";
-         String directoryPath = "shooong/mypage/";
-
-         imageUrl = objectStorageService.uploadFile(bucketName, directoryPath, file);
-      }
+//      if (file != null && !file.isEmpty()) {
+//         String bucketName = "push";
+//         String directoryPath = "shooong/mypage/";
+//
+//         imageUrl = objectStorageService.uploadFile(bucketName, directoryPath, file);
+//      }
 
       // TODO: 비밀번호는 수정 안했을 떄, 다른 방법 생각해보기
       if (userModifyReqDto.getPassword() != null && !userModifyReqDto.getPassword().isBlank()) {

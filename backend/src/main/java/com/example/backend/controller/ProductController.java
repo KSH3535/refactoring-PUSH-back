@@ -6,7 +6,7 @@ import com.example.backend.dto.product.*;
 import com.example.backend.dto.product.Detail.*;
 import com.example.backend.dto.user.UserDTO;
 import com.example.backend.service.Product.ProductService;
-import com.example.backend.service.objectstorage.ObjectStorageService;
+//import com.example.backend.service.objectstorage.ObjectStorageService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -27,14 +27,14 @@ public class ProductController {
 
     private final ProductService productService;
 
-    private ObjectStorageService objectStorageService;
+//    private ObjectStorageService objectStorageService;
 
-    private String bucketName = "push";
+//    private String bucketName = "push";
 
     @Autowired
-    public ProductController(ProductService productService, ObjectStorageService objectStorageService) {
+    public ProductController(ProductService productService) {
         this.productService = productService;
-        this.objectStorageService = objectStorageService;
+//        this.objectStorageService = objectStorageService;
     }
 
     // 해당 대분류 상품
@@ -154,10 +154,10 @@ public class ProductController {
         photoRequestDto.setModelNum(modelNum);
         photoRequestDto.setReviewContent(reviewContent);
 
-        String fileName = objectStorageService.uploadFile(bucketName, "shooong/products/", tempImageData);
-        if (fileName != null) {
-            photoRequestDto.setReviewImg(fileName);
-        }
+//        String fileName = objectStorageService.uploadFile(bucketName, "shooong/products/", tempImageData);
+//        if (fileName != null) {
+//            photoRequestDto.setReviewImg(fileName);
+//        }
 
         productService.addPhotoReview(photoRequestDto);
         return ResponseEntity.ok("리뷰가 성공적으로 작성되었습니다.");
